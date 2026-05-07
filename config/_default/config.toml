@@ -1,0 +1,16 @@
+# Change baseurl before deploy（博客上线地址可按实际修改）
+baseurl = "https://blog.akich.io/"
+defaultContentLanguage = "zh-cn"
+title = "AkiChan"
+
+# Hugo ≥ 0.158：用 locale 替代已弃用的 languageCode
+locale = "zh-cn"
+
+# Theme i18n：https://github.com/CaiJimmy/hugo-theme-stack/tree/master/i18n
+hasCJKLanguage = true
+
+# 使用自有 Disqus 短名时再填写；未使用可留空并在 params 里关闭评论
+disqusShortname = ""
+
+[pagination]
+pagerSize = 5
