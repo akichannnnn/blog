@@ -45,5 +45,15 @@ toggle = true
 default = "auto"
 
 [comments]
-enabled = false
-provider = "disqus"
+enabled = true
+provider = "waline"
+
+[comments.waline]
+serverURL = "https://comment.akich.io/"
+lang = "zh-CN"
+requiredMeta = ["nick", "mail"]
+emoji = ["https://unpkg.com/@waline/emojis@1.0.1/weibo", "https://unpkg.com/@waline/emojis@1.0.1/bilibili"]
+
+[comments.waline.locale]
+admin = "站长"
+placeholder = "欢迎留言~"
