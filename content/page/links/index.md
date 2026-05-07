@@ -31,5 +31,24 @@ menu:
 comments: false
 ---
 
-## 本站的链接：
+欢迎交换友链～
+
+### 本站的信息：
 链接：[https://akich.io/](https://akich.io/)
+名称：AkiChan's Blog
+简介：一个普通人的碎碎念
+头像：[https://akich.io/img/avatar.png](https://akich.io/img/avatar.png)
+
+### 申请友链：
+请将以下信息发送至邮箱：arisu@ieee.org
+- 链接（可以使用github、twitter、telegram、email等）：
+- 名称：
+- 简介：
+- 头像：
+
+当我看到之后，我会将你的链接添加到本站。
+
+### 说明
+- 本站会定期检查友链，如果发现友链失效，我会将其删除，如果需要更新信息，请发送邮件联系我。
+- 网站需要支持HTTPS。
+- 头像需要是avif,png,webp格式，不接受jpg,gif,bmp,svg,ico等格式。
