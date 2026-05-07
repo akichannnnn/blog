@@ -34,10 +34,34 @@ comments: true
 欢迎交换友链～
 
 ### 本站的信息：
-链接：[https://akich.io/](https://akich.io/)
-名称：AkiChan's Blog
-简介：一个普通人的碎碎念
-头像：[https://akich.io/img/avatar.png](https://akich.io/img/avatar.png)
+
+<div class="site-info-table">
+
+| 项目 | 内容 | |
+|------|------|-|
+| 链接 | https://akich.io/ | <button class="copy-btn" data-copy="https://akich.io/">复制</button> |
+| 名称 | AkiChan's Blog | <button class="copy-btn" data-copy="AkiChan's Blog">复制</button> |
+| 简介 | 一个普通人的碎碎念 | <button class="copy-btn" data-copy="一个普通人的碎碎念">复制</button> |
+| 头像 | https://akich.io/img/avatar.png | <button class="copy-btn" data-copy="https://akich.io/img/avatar.png">复制</button> |
+
+</div>
+
+<script>
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('copy-btn')) {
+        var text = e.target.getAttribute('data-copy');
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = e.target;
+            btn.textContent = '已复制';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = '复制';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+});
+</script>
 
 ### 申请友链：
 请将以下信息发送至邮箱：arisu@ieee.org
