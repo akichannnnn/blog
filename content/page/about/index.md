@@ -6,7 +6,7 @@ menu:
     weight: 3
     params:
       icon: user
-comments: false
+comments: true
 ---
 
 

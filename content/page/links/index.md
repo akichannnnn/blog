@@ -28,7 +28,7 @@ menu:
         params:
             icon: link
 
-comments: false
+comments: true
 ---
 
 欢迎交换友链～
