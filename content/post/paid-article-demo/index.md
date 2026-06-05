@@ -1,24 +1,15 @@
 ---
-title: "赞助内容示例：深入理解 Hugo 静态博客"
-description: "一篇演示赞助解锁功能的示例文章，展示试读与爱发电登录验证流程。"
+title: "test"
+description: "Payment test article"
 date: 2026-06-05
 categories: ["技术"]
 tags: ["Hugo", "博客"]
 comments: true
 toc: false
 sponsor: true
-sponsor_message: "感谢你的支持！登录爱发电并验证有效订阅后即可阅读完整教程。"
+sponsor_message: "该文章需要コース１等级的赞助。"
 ---
 
-Hugo 是目前最流行的静态网站生成器之一。它用 Go 语言编写，构建速度极快，非常适合个人博客、文档站点和轻量级内容平台。
-
-本文将带你了解 Hugo 的核心概念：内容组织、主题系统、以及如何通过布局覆盖来扩展功能。
-
-## 试读部分
-
-在 Hugo 中，文章以 Markdown 文件形式存放在 `content/` 目录下。每个文件可以包含 YAML front matter，用于定义标题、日期、分类等元数据。
-
-Hugo 的主题通过 Go Modules 引入，你可以在项目根目录的 `go.mod` 中管理依赖。如果需要自定义渲染逻辑，只需在项目的 `layouts/` 目录下创建同名模板，即可覆盖主题默认行为。
 
 <!--more-->
 
