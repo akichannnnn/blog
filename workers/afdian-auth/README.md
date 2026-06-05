@@ -49,5 +49,5 @@ npm run dev
 
 ## Cookie 跨子域
 
-`COOKIE_DOMAIN=.akich.io` 让 `blog.akich.io` 能读取 `api.akich.io` 写入的登录 Cookie。
+`COOKIE_DOMAIN=.akich.io` 让 `akich.io` 能读取 `api.akich.io` 写入的登录 Cookie。
 两者同属 `akich.io`，`SameSite=Lax` 下跨子域 fetch 会携带 Cookie。

@@ -1,5 +1,5 @@
 # Change baseurl before deploy（博客上线地址可按实际修改）
-baseurl = "https://blog.akich.io/"
+baseurl = "https://akich.io/"
 defaultContentLanguage = "zh-cn"
 title = "AkiChan"
 

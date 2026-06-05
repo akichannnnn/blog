@@ -14,7 +14,7 @@ GitHub Pages 只能托管静态文件，赞助验证的后端逻辑跑在独立�
 ## 赞助内容验证
 
 ```
-blog.akich.io     → GitHub Pages（静态页 + 赞助墙 UI）
+akich.io          → GitHub Pages（静态页 + 赞助墙 UI）
 api.akich.io      → Cloudflare Worker（爱发电 OAuth + 订阅验证）
 comment.akich.io  → Waline 评论（与赞助无关）
 ```
