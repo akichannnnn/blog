@@ -1,0 +1,36 @@
+{{- $sponsor := site.Params.sponsor -}}
+{{- $message := .Params.sponsor_message | default .Params.paywall_message | default $sponsor.message -}}
+{{- $sponsorURL := .Params.sponsor_url | default .Params.purchase_url | default $sponsor.sponsor_url -}}
+
+<div class="sponsor-wall" data-slug="{{ .Slug }}">
+    <div class="sponsor-wall__fade"></div>
+    <div class="sponsor-wall__card">
+        <div class="sponsor-wall__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+        </div>
+
+        <p class="sponsor-wall__badge">{{ $sponsor.badge | default "赞助" }}</p>
+        <p class="sponsor-wall__message">{{ $message }}</p>
+
+        <div class="sponsor-wall__status" id="sponsor-status" hidden>
+            <span class="sponsor-wall__user" id="sponsor-user"></span>
+        </div>
+
+        <div class="sponsor-wall__actions">
+            <button type="button" class="sponsor-wall__button sponsor-wall__button--primary" id="sponsor-login-btn">
+                使用爱发电登录
+            </button>
+            <button type="button" class="sponsor-wall__button sponsor-wall__button--ghost" id="sponsor-logout-btn" hidden>
+                退出登录
+            </button>
+
+            {{ if $sponsorURL }}
+                <a href="{{ $sponsorURL }}" class="sponsor-wall__button sponsor-wall__button--secondary" target="_blank" rel="noopener">
+                    {{ $sponsor.sponsor_label | default "前往赞助" }}
+                </a>
+            {{ end }}
+        </div>
+    </div>
+</div>

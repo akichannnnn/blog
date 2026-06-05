@@ -1,0 +1,16 @@
+name = "afdian-auth"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+# 绑定自定义域名（需在 Cloudflare 该域已接入）
+routes = [
+  { pattern = "api.akich.io", custom_domain = true }
+]
+
+# 非敏感配置（敏感凭证用 `wrangler secret put` 设置，见 README）
+[vars]
+PUBLIC_BASE_URL = "https://api.akich.io"
+ALLOWED_ORIGINS = "https://blog.akich.io,http://localhost:1313"
+COOKIE_DOMAIN = ".akich.io"
+# 需验证的赞助方案 ID，留空表示任意有效订阅均可
+AFDIAN_PLAN_ID = ""

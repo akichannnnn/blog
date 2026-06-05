@@ -1,0 +1,20 @@
+<section class="article-content" data-sponsor-article="{{ if partial "article/is-sponsor" . }}true{{ else }}false{{ end }}">
+    {{ $wrappedTable := printf "<div class=\"table-wrapper\">${1}</div>" }}
+    {{ $isSponsor := partial "article/is-sponsor" . }}
+
+    {{ if $isSponsor }}
+        {{ .Summary | replaceRE "(<table>(?:.|\n)+?</table>)" $wrappedTable | safeHTML }}
+        {{ partial "article/components/sponsor-wall" . }}
+
+        {{ $parts := split .RawContent "<!--more-->" }}
+        {{ if gt (len $parts) 1 }}
+            {{ $fullContent := (index $parts 1) | markdownify }}
+            {{ $fullContent = $fullContent | replaceRE "(<table>(?:.|\n)+?</table>)" $wrappedTable }}
+            <template id="sponsor-full-content" data-slug="{{ .Slug }}">
+                {{ $fullContent | safeHTML }}
+            </template>
+        {{ end }}
+    {{ else }}
+        {{ .Content | replaceRE "(<table>(?:.|\n)+?</table>)" $wrappedTable | safeHTML }}
+    {{ end }}
+</section>

@@ -1,0 +1,24 @@
+{{- $pages := partial "helper/pages.html" .Site.Home -}}
+{{- $result := slice -}}
+
+{{- range $pages -}}
+    {{- $isSponsor := partial "article/is-sponsor" . -}}
+    {{- $content := .Plain -}}
+    {{- if $isSponsor -}}
+        {{- $content = .Summary | plainify -}}
+    {{- end -}}
+    {{- $data := dict "title" .Title "date" .Date "permalink" .RelPermalink "content" $content -}}
+
+    {{- if $isSponsor -}}
+        {{- $data = merge $data (dict "sponsor" true) -}}
+    {{- end -}}
+
+    {{- $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+    {{- if $image -}}
+        {{- $data = merge $data (dict "image" $image.Permalink) -}}
+    {{- end -}}
+
+    {{- $result = $result | append $data -}}
+{{- end -}}
+
+{{ jsonify $result }}

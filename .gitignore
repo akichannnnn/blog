@@ -15,3 +15,8 @@ Thumbs.db
 
 # Node (if using Hugo pipes with npm)
 node_modules/
+
+# Afdian auth secrets
+.env
+workers/afdian-auth/.dev.vars
+workers/afdian-auth/.wrangler/

@@ -1,0 +1,12 @@
+{{- $enabled := false -}}
+{{- with site.Params.sponsor -}}
+    {{- $enabled = .enabled | default true -}}
+{{- else -}}
+    {{- with site.Params.paywall -}}
+        {{- $enabled = .enabled | default true -}}
+    {{- else -}}
+        {{- $enabled = true -}}
+    {{- end -}}
+{{- end -}}
+{{- $flagged := or .Params.sponsor .Params.paid -}}
+{{- return (and $flagged $enabled) -}}

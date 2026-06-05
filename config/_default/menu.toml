@@ -31,3 +31,13 @@ url = "https://cv.akich.io/"
 
 [social.params]
 icon = "link"
+
+[[main]]
+identifier = "sponsor"
+name = "赞助"
+url = "https://afdian.com/a/yimingqi"
+weight = 6
+
+[main.params]
+icon = "heart"
+newTab = true
