@@ -46,6 +46,11 @@ theme = 'puresuck'
   weight = 15
 
 [[menus.main]]
+  name = '友链'
+  url = '/links/'
+  weight = 18
+
+[[menus.main]]
   name = '关于'
   url = '/about/'
   weight = 20

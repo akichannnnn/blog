@@ -30,3 +30,13 @@ title: 关于
 | 居住地          | 日本关东某地                              |
 | 邮箱           | arisu@ieee.org                      |
 | GitHub       | https://github.com/AkiChannnnn      |
+
+## Credits
+
+| 项目 | 用途 | License |
+|------|------|---------|
+| [Hugo](https://github.com/gohugoio/hugo) | 静态网站生成器 | Apache-2.0 |
+| [PureSuck](https://github.com/MoXiaoXi233/PureSuck-theme) | 主题（Typecho 原版，作者 MoXiify，本站使用 Hugo 重制版） | MIT |
+| [bestdori-api](https://github.com/WindowsSov8forUs/bestdori-api) | 获取 [Bestdori](https://bestdori.com/) 数据（本站使用其 TypeScript 移植版） | MIT |
+| [Waline](https://github.com/walinejs/waline) | 评论系统 | GPL-2.0 |
+| [Telegram](https://telegram.org/) | 「生活」页内容来源 | 非开源服务 |
