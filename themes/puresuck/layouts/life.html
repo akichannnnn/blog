@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $tg := site.Params.telegram }}
+{{ $js := resources.Get "js/life.js" | js.Build (dict "minify" hugo.IsProduction "target" "es2022") }}
+<header class="page-head">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+</header>
+<section id="life" class="life" data-api="{{ $tg.api }}" data-channel="{{ $tg.channel }}">
+  <form class="life-search" role="search" id="life-form">
+    <label class="sr-only" for="life-q">搜索频道内容</label>
+    <input type="search" id="life-q" name="q" placeholder="搜索频道内容…（按词匹配，也可以搜 #话题）" autocomplete="off" enterkeyhint="search">
+    <button class="icon-btn" type="submit" aria-label="搜索">{{ partial "icon.html" "search" }}</button>
+  </form>
+  <p class="life-status" id="life-status" role="status" aria-live="polite"></p>
+  <div class="life-list" id="life-list"></div>
+  <div class="life-more">
+    <button class="chip" type="button" id="life-more" hidden>加载更多</button>
+  </div>
+  <noscript><p>需要启用 JavaScript 才能加载频道内容，也可以直接访问 <a href="https://t.me/s/{{ $tg.channel }}">t.me/s/{{ $tg.channel }}</a>。</p></noscript>
+</section>
+<script type="module" src="{{ $js.RelPermalink }}"></script>
+{{ end }}

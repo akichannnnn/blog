@@ -1,0 +1,18 @@
+{{ define "main" }}
+  {{ $pages := where site.RegularPages "Type" "post" }}
+  {{ $p := .Paginate $pages }}
+  {{ if and (eq $p.PageNumber 1) (or .Content .Params.greeting) }}
+  <section class="hero" aria-label="站点介绍">
+    <div class="hero-text">
+      {{ with .Params.greeting }}<h2 class="hero-title">{{ . }}</h2>{{ end }}
+      <div class="hero-body">{{ .Content }}</div>
+      {{ with .Params.links }}<p class="hero-links">{{ range . }}<a class="chip" href="{{ .url }}">{{ .name }}</a>{{ end }}</p>{{ end }}
+    </div>
+  </section>
+  {{ end }}
+  <div class="stack">
+    {{ range $p.Pages }}{{ partial "card.html" . }}{{ end }}
+    {{ if not $p.Pages }}<p class="empty">还没有文章。</p>{{ end }}
+  </div>
+  {{ partial "pagination.html" $p }}
+{{ end }}

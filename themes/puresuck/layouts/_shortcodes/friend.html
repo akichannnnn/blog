@@ -1,0 +1,4 @@
+<a class="friend" href="{{ .Get "url" }}" target="_blank" rel="noopener">
+  {{ with .Get "avatar" }}<img src="{{ . }}" alt="" loading="lazy" width="56" height="56">{{ end }}
+  <span><strong>{{ .Get "name" }}</strong><small>{{ .Get "desc" }}</small></span>
+</a>

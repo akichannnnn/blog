@@ -1,0 +1,23 @@
+<header class="side">
+  <div class="side-inner">
+    <a href="{{ "/" | relURL }}" class="avatar" aria-label="首页">
+      <img src="{{ with site.Params.avatar }}{{ . | relURL }}{{ else }}{{ "images/avatar.webp" | relURL }}{{ end }}" alt="头像" width="120" height="120" fetchpriority="high">
+    </a>
+    <h1 class="site-title">{{ site.Title }}</h1>
+    {{ with site.Params.description }}<p class="site-desc">{{ . }}</p>{{ end }}
+    <nav class="nav" aria-label="主导航">
+      {{ $cur := . }}
+      <a href="{{ "/" | relURL }}" {{ if $cur.IsHome }}aria-current="page"{{ end }}>首页</a>
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}" {{ if $cur.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="search-open" aria-label="搜索 (Ctrl/⌘ K)">{{ partial "icon.html" "search" }}</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="切换日夜模式">
+        <span class="when-light">{{ partial "icon.html" "moon" }}</span>
+        <span class="when-dark">{{ partial "icon.html" "sun" }}</span>
+      </button>
+    </div>
+  </div>
+</header>

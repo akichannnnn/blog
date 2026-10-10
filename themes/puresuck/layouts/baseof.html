@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "zh-CN" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="layout">
+    {{ partial "header.html" . }}
+    <main class="main" id="main">
+      {{ block "main" . }}{{ end }}
+      <footer class="footer">
+        {{ with site.Params.footer }}{{ . | safeHTML }}{{ else }}© {{ now.Year }} {{ site.Title }}{{ end }}
+        <br>Built with Hugo
+      </footer>
+    </main>
+    {{ partial "sidebar.html" . }}
+  </div>
+  <dialog class="search-dialog" id="search-dialog" aria-label="搜索">
+    <form method="dialog"><button class="icon-btn close" aria-label="关闭">{{ partial "icon.html" "x" }}</button></form>
+    <input type="search" id="search-input" placeholder="输入关键字搜索…" autocomplete="off" aria-label="搜索关键字">
+    <ul id="search-results"></ul>
+  </dialog>
+  <dialog class="lightbox" id="lightbox"><img alt=""></dialog>
+  {{ partial "scripts.html" . }}
+</body>
+</html>

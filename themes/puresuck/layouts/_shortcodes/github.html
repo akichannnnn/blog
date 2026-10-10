@@ -1,0 +1,2 @@
+{{ $r := .Get "repo" | default (.Get 0) }}
+<a class="gh-card" href="https://github.com/{{ $r }}" target="_blank" rel="noopener">{{ partial "icon.html" "link" }}<span>github.com/<strong>{{ $r }}</strong></span></a>

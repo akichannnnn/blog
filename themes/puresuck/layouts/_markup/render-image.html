@@ -1,0 +1,4 @@
+<figure>
+  <img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}" loading="lazy" decoding="async" data-zoom{{ with .Title }} title="{{ . }}"{{ end }}>
+  {{ with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

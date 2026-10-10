@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} - {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 140 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ range .AlternativeOutputFormats }}<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">{{ end }}
+<link rel="icon" href="{{ with site.Params.favicon }}{{ . | relURL }}{{ else }}{{ "images/avatar.webp" | relURL }}{{ end }}">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Params.cover }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{/* 防闪烁：在渲染前确定主题；开启跨文档 View Transitions */}}
+<script>
+  (() => {
+    let t = 'auto';
+    try { t = localStorage.getItem('theme') || 'auto'; } catch {}
+    if (t === 'auto') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
+{{ $css := slice (resources.Get "css/chroma-light.css") (resources.Get "css/chroma-dark.css") (resources.Get "css/main.css") | resources.Concat "css/bundle.css" }}
+{{ if hugo.IsProduction }}{{ $css = $css | minify | fingerprint }}{{ end }}
+<style>:root{--themecolor:{{ site.Params.themeColor | default "#3f8a6c" }};--themecolor-dark:{{ site.Params.themeColorDark | default "#5fb08f" }}}</style>
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">

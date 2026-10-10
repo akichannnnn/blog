@@ -1,0 +1,6 @@
+{{ define "main" }}
+  <header class="page-head"><h1>{{ .Title }}</h1>{{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}</header>
+  {{ $p := .Paginate .Pages }}
+  <div class="stack">{{ range $p.Pages }}{{ partial "card.html" . }}{{ end }}</div>
+  {{ partial "pagination.html" $p }}
+{{ end }}

@@ -1,0 +1,7 @@
+name = "PureSuck"
+license = "MIT"
+description = "PureSuck (Typecho) 的 Hugo 重制版：原生 CSS 嵌套、View Transitions、scroll-driven animations、ES Modules。"
+min_version = "0.146.0"
+
+[author]
+  name = "Original: MoXiify"

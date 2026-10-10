@@ -1,0 +1,2 @@
+{{ $t := .Get "type" | default "blue" }}
+<div class="window {{ $t }}"><p class="window-title">{{ .Get "title" }}</p><div>{{ .Inner | markdownify }}</div></div>

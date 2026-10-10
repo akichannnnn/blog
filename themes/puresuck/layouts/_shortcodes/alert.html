@@ -1,0 +1,2 @@
+{{ $t := .Get "type" | default (.Get 0) | default "blue" }}
+<div class="alert {{ $t }}" role="alert">{{ partial "icon.html" "info" }}<div>{{ .Inner | markdownify }}</div></div>

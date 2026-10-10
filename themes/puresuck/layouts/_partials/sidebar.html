@@ -1,0 +1,22 @@
+<aside class="aside">
+  <div class="aside-inner">
+    {{ if and .IsPage (.Param "toc" | default true) (gt (len .TableOfContents) 80) }}
+      <section class="widget toc" id="toc">
+        <h2>{{ partial "icon.html" "list" }} 文章目录</h2>
+        {{ .TableOfContents }}
+      </section>
+    {{ end }}
+    {{ with site.Taxonomies.categories }}
+      <section class="widget">
+        <h2>{{ partial "icon.html" "folder" }} 分类</h2>
+        <div class="chips">{{ range .Alphabetical }}<a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}<small>{{ .Count }}</small></a>{{ end }}</div>
+      </section>
+    {{ end }}
+    {{ with site.Taxonomies.tags }}
+      <section class="widget">
+        <h2>{{ partial "icon.html" "tag" }} 标签</h2>
+        <div class="chips">{{ range first 20 .ByCount }}<a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}<small>{{ .Count }}</small></a>{{ end }}</div>
+      </section>
+    {{ end }}
+  </div>
+</aside>

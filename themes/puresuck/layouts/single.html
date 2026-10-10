@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="card post">
+  {{ with .Params.cover }}<figure class="cover big"><img src="{{ . | relURL }}" alt="" fetchpriority="high" decoding="async"></figure>{{ end }}
+  <div class="card-body">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ if eq .Type "post" }}
+    <div class="meta">
+      <span>{{ partial "icon.html" "calendar" }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></span>
+      <span>{{ partial "icon.html" "clock" }}{{ .WordCount }} 字，约 {{ math.Max 1 (div .WordCount 300) }} 分钟</span>
+      {{ range .GetTerms "categories" }}<a href="{{ .RelPermalink }}">{{ partial "icon.html" "folder" }}{{ .LinkTitle }}</a>{{ end }}
+      {{ range .GetTerms "tags" }}<a href="{{ .RelPermalink }}">{{ partial "icon.html" "tag" }}{{ .LinkTitle }}</a>{{ end }}
+    </div>
+    {{ end }}
+    <div class="prose">{{ .Content }}</div>
+    {{ if and (eq .Type "post") (.Param "license" | default true) }}
+    <aside class="license">
+      <strong>{{ .Title }}</strong>
+      <a href="{{ .Permalink }}">{{ .Permalink }}</a>
+      <dl>
+        <div><dt>本文作者</dt><dd>{{ with site.Params.author }}{{ . }}{{ else }}{{ site.Title }}{{ end }}</dd></div>
+        <div><dt>发布时间</dt><dd>{{ .Date.Format "2006-01-02" }}</dd></div>
+        <div><dt>许可协议</dt><dd><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="license">CC BY-NC-SA 4.0</a></dd></div>
+      </dl>
+    </aside>
+    {{ end }}
+  </div>
+</article>
+{{ partial "comments.html" . }}
+{{ end }}

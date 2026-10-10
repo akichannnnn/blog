@@ -1,0 +1,16 @@
+{
+  "name": "bestdori-api",
+  "version": "0.1.0",
+  "description": "TypeScript port of WindowsSov8forUs/bestdori-api (Bestdori read-only APIs)",
+  "type": "module",
+  "main": "src/index.ts",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "covers": "node scripts/assign-covers.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

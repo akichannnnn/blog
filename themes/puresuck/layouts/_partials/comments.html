@@ -1,0 +1,27 @@
+{{/* Waline 评论：服务端数据来自 params.waline.serverURL（远端），前端从 unpkg 按需加载 */}}
+{{ $w := site.Params.waline }}
+{{ if and $w $w.enabled .IsPage (ne .Params.comments false) (eq .Type "post") }}
+{{ $v := $w.version | default "3.5.0" }}
+<section class="card comments" id="comments">
+  <div class="card-body">
+    <div id="waline"></div>
+  </div>
+</section>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@{{ $v }}/dist/waline.css">
+<script type="module">
+  const { init } = await import('https://unpkg.com/@waline/client@{{ $v }}/dist/waline.js');
+  const root = document.documentElement;
+  const app = init({
+    el: '#waline',
+    serverURL: {{ $w.serverURL | jsonify | safeJS }},
+    path: location.pathname,
+    lang: {{ $w.lang | default "zh-CN" | jsonify | safeJS }},
+    dark: 'html[data-theme="dark"]',
+    requiredMeta: {{ $w.requiredMeta | default (slice "nick") | jsonify | safeJS }},
+    locale: { placeholder: {{ $w.placeholder | default "欢迎评论" | jsonify | safeJS }}{{ with $w.admin }}, admin: {{ . | jsonify | safeJS }}{{ end }} },
+    emoji: {{ $w.emoji | default slice | jsonify | safeJS }},
+    pageview: false,
+    comment: false,
+  });
+</script>
+{{ end }}

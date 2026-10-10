@@ -1,0 +1,13 @@
+{{/* 文章卡片：有 cover 时显示头图 */}}
+<article class="card {{ if .Params.cover }}has-cover{{ end }}">
+  {{ with .Params.cover }}<a class="cover" href="{{ $.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async"></a>{{ end }}
+  <div class="card-body">
+    <h2 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p class="card-excerpt">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}</p>
+    <footer class="meta">
+      <span>{{ partial "icon.html" "calendar" }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></span>
+      <span>{{ partial "icon.html" "clock" }}约 {{ math.Max 1 (div .WordCount 300) }} 分钟</span>
+      {{ range first 1 (.GetTerms "categories") }}<a href="{{ .RelPermalink }}">{{ partial "icon.html" "folder" }}{{ .LinkTitle }}</a>{{ end }}
+    </footer>
+  </div>
+</article>

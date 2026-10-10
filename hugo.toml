@@ -1,0 +1,66 @@
+baseURL = 'https://akich.io/'
+locale = 'zh-cn'
+defaultContentLanguage = 'zh-cn'
+hasCJKLanguage = true
+title = 'AkiChan'
+theme = 'puresuck'
+
+[pagination]
+  pagerSize = 5
+
+[outputs]
+  home = ['html', 'rss', 'json']
+
+[outputFormats.json]
+  baseName = 'index'
+  mediaType = 'application/json'
+
+[markup.highlight]
+  noClasses = false
+  lineNos = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+
+[params]
+  description = 'この手を離さない'
+  avatar = '/img/avatar.webp'
+  favicon = '/img/avatar.webp'
+  author = 'AkiChan'
+  themeColor = '#3f8a6c'
+  themeColorDark = '#5fb08f'
+  footer = '© 2026 AkiChan'
+
+[[menus.main]]
+  name = '归档'
+  url = '/archives/'
+  weight = 10
+
+[[menus.main]]
+  name = '生活'
+  url = '/life/'
+  weight = 15
+
+[[menus.main]]
+  name = '关于'
+  url = '/about/'
+  weight = 20
+
+# 「生活」页：实时读取 Telegram 频道，api 是 workers/telegram 部署后的地址
+[params.telegram]
+  api = 'https://tg.akich.io'
+  channel = 'sbgatools'
+
+[params.waline]
+  enabled = true
+  serverURL = 'https://comment.akich.io/'
+  lang = 'zh-CN'
+  version = '3.5.0'
+  requiredMeta = ['nick', 'mail']
+  placeholder = '欢迎留言~'
+  admin = '站长'
+  emoji = ['https://unpkg.com/@waline/emojis@1.0.1/weibo', 'https://unpkg.com/@waline/emojis@1.0.1/bilibili']

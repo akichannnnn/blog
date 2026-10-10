@@ -1,0 +1,13 @@
+name = "telegram-feed"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+# 绑定自定义域名（需在 Cloudflare 该域已接入），博客的 params.telegram.api 要与之一致
+routes = [
+  { pattern = "tg.akich.io", custom_domain = true }
+]
+
+[vars]
+# 要展示的公开频道（仅允许这一个，避免变成开放代理）
+CHANNEL = "sbgatools"
+ALLOWED_ORIGINS = "https://akich.io,https://blog.akich.io,http://localhost:1313"
