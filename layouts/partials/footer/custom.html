@@ -1,9 +1,0 @@
-{{- with site.Params.sponsor -}}
-    {{- if .enabled -}}
-        <script>
-            window.SponsorConfig = {
-                authApiUrl: {{ .auth_api_url }}
-            };
-        </script>
-    {{- end -}}
-{{- end -}}
