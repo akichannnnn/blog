@@ -19,6 +19,8 @@
     document.documentElement.dataset.theme = t;
   })();
 </script>
+{{/* 首屏底色内联：不等外部样式表，避免暗色模式白屏闪烁（需与 main.css 的 --bg 保持一致） */}}
+<style>html{background:#f6f6f6;color-scheme:light}html[data-theme=dark]{background:#121416;color-scheme:dark}</style>
 {{ $css := slice (resources.Get "css/chroma-light.css") (resources.Get "css/chroma-dark.css") (resources.Get "css/main.css") | resources.Concat "css/bundle.css" }}
 {{ if hugo.IsProduction }}{{ $css = $css | minify | fingerprint }}{{ end }}
 <style>:root{--themecolor:{{ site.Params.themeColor | default "#3f8a6c" }};--themecolor-dark:{{ site.Params.themeColorDark | default "#5fb08f" }}}</style>

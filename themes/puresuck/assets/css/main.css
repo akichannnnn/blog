@@ -25,13 +25,12 @@
     img { filter: brightness(.85); }
   }
   *, ::before, ::after { box-sizing: border-box; }
-  html { font-size: 15px; scroll-behavior: smooth; text-size-adjust: 100%; scroll-padding-top: 1.5rem; }
+  html { background: var(--bg); font-size: 15px; scroll-behavior: smooth; text-size-adjust: 100%; scroll-padding-top: 1.5rem; }
   @media (min-width: 580px) { html { font-size: 16px; } }
   @media (min-width: 1400px) { html { font-size: 17px; } }
   body {
     margin: 0; background: var(--bg); color: var(--text);
     font: 1rem/1.85 var(--font); overflow-y: scroll;
-    transition: background-color .3s, color .3s;
   }
   a { color: var(--theme); text-decoration: none; transition: color .2s; &:hover { color: color-mix(in srgb, var(--theme) 75%, var(--text)); } }
   img { max-width: 100%; height: auto; vertical-align: bottom; }
