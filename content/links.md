@@ -16,6 +16,7 @@ title: 友链
 
 {{< friend name="WYH2004" url="https://wyh2004.work/" avatar="https://avatars.githubusercontent.com/u/32890512?v=4" desc="Welcome to nginx!" >}}
 
+{{< friend name="yhw" url="https://yhanw.github.io/" avatar="https://yhanw.github.io/assets/img/favicon.png" desc="天使的幸运草" >}}
 ## 本站信息
 
 ```text
