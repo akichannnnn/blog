@@ -31,12 +31,30 @@ title: 关于
 | 邮箱           | arisu@ieee.org                      |
 | GitHub       | https://github.com/AkiChannnnn      |
 
+## 设备
+| Key          | Value                               |
+|--------------|-------------------------------------|
+| 电脑1         | Apple MacBook Pro 14" M4 (12+512GB) |
+| 电脑2         | Lenovo Legion R9000P ( AMD Ryzen 9 8945HX + 32GB RAM + 5070) |
+| 手机          | iPhone 16 Pro (512GB) |
+| 平板          | iPad Pro 12.9" M4 (256GB) |
+| VR设备        | Meta Quest 2 |
+
+## 游戏
+我游玩的游戏比较少，以下是一些：
+- maimai DX : rating 15038
+- VRChat
+- Minecraft (hypixel bedwars牢玩家)
+
+## 其他
+- Codeforces : rating 2400
+- AtCoder : rating 2300
+![img.png](/img/lai-codeforces.png)
 ## Credits
 
-| 项目 | 用途 | License |
-|------|------|---------|
-| [Hugo](https://github.com/gohugoio/hugo) | 静态网站生成器 | Apache-2.0 |
-| [PureSuck](https://github.com/MoXiaoXi233/PureSuck-theme) | 主题（Typecho 原版，作者 MoXiify，本站使用 Hugo 重制版） | MIT |
-| [bestdori-api](https://github.com/WindowsSov8forUs/bestdori-api) | 获取 [Bestdori](https://bestdori.com/) 数据（本站使用其 TypeScript 移植版） | MIT |
-| [Waline](https://github.com/walinejs/waline) | 评论系统 | GPL-2.0 |
-| [Telegram](https://telegram.org/) | 「生活」页内容来源 | 非开源服务 |
+[Hugo](https://github.com/gohugoio/hugo) - Apache-2.0   
+
+[PureSuck](https://github.com/MoXiaoXi233/PureSuck-theme)   (AkiChan Modified)- MIT 
+
+[bestdori-api](https://github.com/WindowsSov8forUs/bestdori-api)  (AkiChan Modified) - MIT 
+[Waline](https://github.com/walinejs/waline)  - GPL-2.0 
