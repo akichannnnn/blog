@@ -1,6 +1,6 @@
 ---
 title: "Codeforces 2276 A - Perfect Sandwiches"
-date: 2026-10-14
+date: 2026-10-15 5:00:00 +0900
 description: "Codeforces 2276 A - Perfect Sandwiches 题解"
 categories: ["CF"]
 tags: ["Codeforces", "题解"]
@@ -67,14 +67,15 @@ Monocarp 非常节俭，因此制作三明治时必须恰好用完全部 \(a\) �
 设做出 $k$ 个三明治。每个至少要有 1 片香肠，且奶酪数量一定大于香肠数量，香肠数量为 $sausage_i$，所以每个三明治至少需要 $sausage_i + 1$ 片奶酪。
 
 对所有的三明治求和：
-香肠总数： \(\sum_{i=1}^{k} sausage_i = b\)
-
-奶酪总数： \(\sum_{i=1}^{k} cheese_i = a\)
+- 香肠总数： \(\sum_{i=1}^{k} sausage_i = b\)
+- 奶酪总数： \(\sum_{i=1}^{k} cheese_i = a\)
 
 并且 $cheese_i \geq sausage_i + 1$，所以：$ a \geq b + k$ 即为 $ k \leq a - b$
 
 然后同时每个三明治至少有一片香肠，所以 \(k \leq b\)。
+
 因此： 
+
 如果 $a - b < 1$（即 $a \le b$），无法分配，输出 $-1$。否则答案是 $\min(a - b,\ b)$。
 
 ## 代码
@@ -100,3 +101,7 @@ int main() {
     return 0;
 }
 ```
+### 复杂度
+时间复杂度：\(O(t)\)
+
+空间复杂度：\(O(1)\)
