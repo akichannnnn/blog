@@ -1,0 +1,10 @@
+{
+  "name": "akich-blog",
+  "private": true,
+  "scripts": {
+    "covers": "bun run scripts/prepare-covers.ts",
+    "dev": "rm -rf public && bun run scripts/dev.ts",
+    "build": "bun run scripts/build.ts",
+    "hooks:install": "git config core.hooksPath .githooks"
+  }
+}

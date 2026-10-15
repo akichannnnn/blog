@@ -1,3 +1,19 @@
 {{ $opts := dict "minify" hugo.IsProduction "target" "es2022" }}
 {{ $js := resources.Get "js/main.js" | js.Build $opts }}
 <script type="module" src="{{ $js.RelPermalink }}" data-search="{{ "index.json" | relURL }}"></script>
+{{/* 数学公式：Goldmark 保留定界符，由 MathJax 渲染。 */}}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script defer src="{{ "js/mathjax/tex-svg.js" | relURL }}"></script>

@@ -167,6 +167,7 @@
 @layer prose {
   .prose {
     overflow-wrap: anywhere;
+    mjx-container[display="true"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-block: .15rem; }
     > :first-child { margin-top: 0; }
     p, ul, ol, blockquote, pre, table, .table-scroll { margin: 0 0 1.25rem; }
     h1, h2, h3, h4, h5, h6 { font-weight: 400; line-height: 1.4; margin: 2rem 0 1rem; position: relative; }
