@@ -48,7 +48,6 @@ title: 关于
 
 ## 其他
 - Codeforces : rating 2400
-- AtCoder : rating 2300
 ![img.png](/img/lai-codeforces.png)
 ## Credits
 
