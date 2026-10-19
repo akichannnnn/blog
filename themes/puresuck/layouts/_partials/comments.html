@@ -1,6 +1,6 @@
 {{/* Waline 评论：服务端数据来自 params.waline.serverURL（远端），前端从 unpkg 按需加载 */}}
 {{ $w := site.Params.waline }}
-{{ if and $w $w.enabled .IsPage (ne .Params.comments false) (eq .Type "post") }}
+{{ if and $w $w.enabled .IsPage (ne .Params.comments false) }}
 {{ $v := $w.version | default "3.5.0" }}
 <section class="card comments" id="comments">
   <div class="card-body">
