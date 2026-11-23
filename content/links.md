@@ -10,8 +10,6 @@ title: 友链
 
 {{< friend name="夏鸢的波子汽水店" url="https://owo.today" avatar="https://owo.today/assets/avatar.avif" desc="直视平庸，保持谦逊" >}}
 
-{{< friend name="坠星星" url="https://seaksol.cn" avatar="https://seaksol.cn/images/icon/logo.png" desc="中国民航大学ACMer" >}}
-
 {{< friend name="HoshinoStarry" url="https://about.hoshino.host/" avatar="https://about.hoshino.host/assets/avatar-CtuGcvHG.png" >}}
 
 {{< friend name="WYH2004" url="https://wyh2004.work/" avatar="https://avatars.githubusercontent.com/u/32890512?v=4" desc="Welcome to nginx!" >}}
