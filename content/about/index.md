@@ -39,6 +39,7 @@ title: 关于
 | 手机          | iPhone 16 Pro (512GB) |
 | 平板          | iPad Pro 12.9" M4 (256GB) |
 | VR设备        | Meta Quest 2 |
+| 贝斯          | BanG Dream! Viper Bass Rimi(ESP) |
 
 ## 游戏
 我游玩的游戏比较少，以下是一些：
